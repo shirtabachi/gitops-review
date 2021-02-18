@@ -29,7 +29,7 @@ pipeline {
     }
     stage ('Verify deleted templates') {
       when {
-        master 'branch'
+        branch 'master'
       }
       steps {
         sh '! oc get templates -n openshift | grep -q rails'
